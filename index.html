@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>Angular Assignment-1</title>
+        <!--angular-->
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--site-->
+    <script src="js/app.js"></script>
+</head>
+<!-- Notice here the ng-app references our 'weatherApp' module -->
+<body ng-app='weatherApp' ng-style="{'background-image':'url(Images/bgpic.png)', 'left':'20px'}">
+    <!-- Reference the application level controller for the title model. -->
+        
+    <div ng-controller="AppCtrl" ng-model="title" ng-style="{'color':'lavender'}">
+        <h1>{{title}}</h1>
+		<hr>
+        <div class="container">
+        <h4>Sort by Travel Destinations</h4>
+        <img src="Images/sort_up_down.png" width="100px" ng-click="sortBy('cityName')"/>
+        </div>
+        
+        <!-- Our one page app works by switching views here. -->
+        <div ng-repeat="fc in forecast|orderBy:propertyName:reverse">
+            <img src="Images/weather.png"/><label ng-click="showWeather(fc['cityName'])">{{fc['cityName']}}</label><br/><br/>
+            
+        
+        </div>
+        
+        <div ng-model="result" ng-show="isVisible" ng-style="{'border':'3px solid purple', 'position':'absolute', 'left':'150px','top':'280px','color':'white'}">
+                <label><h5>{{result['cityName']}}</h5> </label><br/>
+                <label><h5>High: {{result['high']}}</h5>  </label><br/>
+                <label><h5>Low: {{result['low']}}</h5> </label><br/>
+                <label><h5>Weather: {{result['text']}}</h5> </label><br/><br/>
+                <input type="radio" name="temp" ng-model="value" value="Celcius" ng-change='update(value)'/>Celcius &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="temp" ng-model="value" value="Fahrenheit" ng-change='update(value)'/>Fahrenheit
+         </div>
+        
+    </div>
+          
+        
+</body>
+</html>
