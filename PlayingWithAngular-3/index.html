@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>Angularjs Custom Images Application</title>
+    <link href="rating.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+     <!-- Font awesome CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-app='myApp' ng-controller="AppCtrl" ng-Style="{'background':'linear-gradient(45deg, rgba(192,192,192,1) 0%, rgba(255,255,255,1) 46%, rgba(128,128,128,1) 95%, rgba(128,128,128,1) 100%)'}">
+    <h1 ng-bind="title" ng-Style="{'color':'darkslategray'}"></h1><br/><br/>
+   <div class="container">
+    
+    <div class="row">
+    
+    <div my-Imagelayout pathsrc="'Images/Blue_bouquet.jpg'" captionval="'Blue Flower Bouquet'" inverse-Color="true" author-Name="'Saloni Sharma'" image-Url="'http://plushfloralstudio.ca'"></div>
+    <div my-Imagelayout pathsrc="'Images/Purple_bouquet.jpg'" captionval="'Purple Flower Bouquet'" inverse-Color="false" author-Name="'Andrea Rogers'" image-Url="'http://www.canadaflowers.ca'"></div>
+    <div my-Imagelayout pathsrc="'Images/Pink_bouquet.jpg'" inverse-Color="true" author-Name="'Marc Benioff'" image-Url="'http://www.burnabyflowershop.com'"></div>
+    <div my-Imagelayout pathsrc="'Images/Red_bouquet.jpg'" inverse-Color="true" captionval="'White Flower Bouquet'"></div>
+        <div class="row"></div><br/>
+        <div class="row"></div><br/>
+        <div class="row">
+        <div my-Imagelayout pathsrc="'Images/White_bouquet.jpg'"></div>
+    </div>
+
+    </div><!-- End Ro Div --> 
+    </div><!-- End Container Div -->
+    
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+
+    </body>
+</html>
