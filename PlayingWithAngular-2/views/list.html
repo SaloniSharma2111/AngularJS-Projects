@@ -1,0 +1,30 @@
+<form name="myForm">
+<div class="form-group">
+    <label class="fa fa-envelope col-sm-2 control-label" ng-Style="{'font-size':'20px'}"> Contact email:</label>
+    <div class="col-sm-10"><input class="form-control" type="email" name="email" ng-model="email.text" required>
+    <span ng-show="myForm.email.$error.required && validate" class="error">Valid email address is required!</span>
+    <span ng-show="myForm.email.$error.email && validate" class="error">Valid email address is required!</span>
+    </div><br/><br/><br/>
+
+    <label class="fa fa-pencil col-sm-2 control-label" ng-Style="{'font-size':'20px'}"> Subject: </label>
+    <div class="col-sm-10"><input class="form-control" type="text" name="subject" ng-model="subject" required>
+    <span ng-show="myForm.subject.$error.required && validate" class="error">Subject is required!</span>
+    </div><br/><br/><br/>
+
+    <label class="fa fa-file-text-o col-sm-2 control-label" ng-Style="{'font-size':'20px'}"> Message Body: </label>
+    <div class="col-sm-10">
+        <textarea class="form-control" name="message" ng-model="message" ng-minlength="4" ng-maxlength="255" cols="20" rows="5" required />
+        <span ng-show="myForm.message.$error.required && validate" class="error">Message body is required!</span>
+        <span ng-show="myForm.message.$error.minlength && validate" class="error">Minimum message length is 4 characters!</span>
+        <span ng-show="myForm.message.$error.maxlength && validate" class="error">Maximum message length is 255 characters!</span>
+    </div><br/><br/><br/>
+  </div>
+</form>
+
+<br/><br/><br/>
+   <!-- <div class="col-md-offset-4 col-md-4">-->
+       <center class="col-sm-offset-4 col-sm-4 col-sm-offset-4"> <button class="fa fa-envelope btn btn-default form-control" type="button" name="SendMail" ng-click="SendEmail(email,myForm.$invalid)"> Send Mail </button>
+         <!--  <div class="col-sm-12"><a href="#home/email/{{email}}" class="fa fa-envelope" ng-Style="{'font-size':'30px', 'color':'white'}" onclick="checkValid()"> Send Email</a></div>--> </center>
+   <!-- </div>-->
+    <br/><br/>
+    <div ng-show="isSuccess" ng-Style="{'color':'green', 'font-size':'20px'}">{{successMessage}}</div>
